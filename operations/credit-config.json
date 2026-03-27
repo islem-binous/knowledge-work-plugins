@@ -1,0 +1,50 @@
+{
+  "providers": {
+    "kimi": {
+      "name": "Kimi AI (OpenRouter)",
+      "priority": "high",
+      "costPer1M": { "input": 0.55, "output": 2.20 },
+      "recentFailures": 3,
+      "alertPattern": "insufficient credits"
+    },
+    "or-deepseek-v3": {
+      "name": "DeepSeek v3 (OpenRouter)",
+      "priority": "high", 
+      "costPer1M": { "input": 0.32, "output": 0.89 },
+      "recentFailures": 2,
+      "alertPattern": "insufficient credits"
+    },
+    "or-gemini-flash": {
+      "name": "Gemini Flash (OpenRouter)",
+      "priority": "high",
+      "costPer1M": { "input": 0.50, "output": 3.00 },
+      "recentFailures": 4,
+      "alertPattern": "insufficient credits"
+    },
+    "or-claude-haiku": {
+      "name": "Claude Haiku (OpenRouter)",
+      "priority": "medium",
+      "costPer1M": { "input": 1.25, "output": 5.00 },
+      "recentFailures": 1,
+      "alertPattern": "insufficient credits"
+    }
+  },
+  "thresholds": {
+    "warning": 5.00,
+    "critical": 1.00,
+    "emergency": 0.10,
+    "circuitBreaker": 0.05
+  },
+  "monitoring": {
+    "checkInterval": 300000,
+    "emergencyCheckInterval": 60000,
+    "alertCooldown": 3600000,
+    "maxDailyAlerts": 10
+  },
+  "alerts": {
+    "discordEnabled": true,
+    "slackEnabled": false,
+    "emailEnabled": false,
+    "urgentEscalation": true
+  }
+}
